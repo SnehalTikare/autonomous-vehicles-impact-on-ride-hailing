@@ -50,7 +50,7 @@ def main():
     # changes will be reflected in the DB
     # Run it only once. Since none of the entries are unique there's no way to check if a ride
     # already exists in the DB so it will insert twice
-    DB.commit()
+    # DB.commit()
 
 if __name__ == "__main__":
     main()
