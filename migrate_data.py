@@ -12,10 +12,6 @@ def insert_rows():
         dropoff_latitude = round(row["dropoff_latitude"], 7)
         total_amount = round(row["total_amount"], 2)
 
-        # Not inserting outliers and the ones not compatible with our DB constraints
-        if len(str(trip_distance).split('.')[0]) > 3 or len(str(total_amount).split('.')[0]) > 3:
-            continue
-
         stmt = '''
         INSERT INTO rides
         (pickup_datetime, dropoff_datetime, trip_distance, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, total_amount)
